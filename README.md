@@ -35,6 +35,9 @@ uni.getImageInfo；uni.getFileInfo 通过文件路径获取文件信息-文件�
           tempFiles: [{ path: "http://tmp/xxx.png", size: 2014 }]
       }
       3. 封装type:image
+      4. uni.chooseImage() 在小程序中调用wx.chooseImage() ，其返回：
+         <img width="1594" height="892" alt="image" src="https://github.com/user-attachments/assets/e5c084ac-bc64-497d-8380-ff1655a2eaa3" />
+
  ∴只能👇
 2. uni.getFileSystemManager()
 uniapp提供的对文件的管理：通过文件路径读取本地文件内容（同步）
