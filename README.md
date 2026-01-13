@@ -14,21 +14,33 @@ uni.getFileSystemManager()
 uniapp提供的对文件的管理：通过文件路径读取本地文件内容（同步）
 - readFileSync(filePath: string, encoding?: string): string | ArrayBuffer;
 
+# 小程序上传：
 文件和类型
-文件路径：
+1. 文件路径：选择文件
 wx.chooseMessageFile
-使用nu-ui 的upload组件（本质是input 获取文件）【里头也许有文件url，没有file】
-文件：
+2. 文件：
 uni.getFileSystemManager()
 uniapp提供的对文件的管理：通过文件路径读取本地文件内容（同步）
 - readFileSync(filePath: string, encoding?: string): string | ArrayBuffer;
-类型：
+3. 类型：
  wx.chooseMessageFile从文件名字获取到文件类型
 uni.getImageInfo；uni.getFileInfo 通过文件路径获取文件信息-文件类型
+
 ——————————————————
-1. 使用nu-ui 的upload组件（本质是input 获取文件）【里头也许有文件url，没有file】
+1. 使用nv-ui 的upload组件
+      1. 用了nv-ui上传组件，
+      2. 其底层调用uni.chooseImage() 返回:
+      {
+          tempFilePaths: ["http://tmp/xxx.png"],
+          tempFiles: [{ path: "http://tmp/xxx.png", size: 2014 }]
+      }
+      3. 封装type:image
+ ∴只能👇
 2. uni.getFileSystemManager()
 uniapp提供的对文件的管理：通过文件路径读取本地文件内容（同步）
 - readFileSync(filePath: string, encoding?: string): string | ArrayBuffer;
+  
+# web端上传：
+3. and design（本质是input 获取文件）【会返回file对象】
 
   
