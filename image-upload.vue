@@ -24,10 +24,18 @@
   });
 
   const { imageUpload } = useUpload(props?.fileType ?? 'train');
+/*
 
+*/
   const fileList: any = defineModel();
 
   function afterRead({ file }: any) {
+    /*
+    size: 2014
+thumb: "http://tmp/QwUwT4BRNZeo4a052f8a2cbc874c148d64b8b01381ce.png"
+type: "image"
+url: "http://tmp/QwUwT4BRNZeo4a052f8a2cbc874c148d64b8b01381ce.png"
+    */
     if (props.count >= 1) {
       imageUpload(file.url).then((res) => {
         fileList.value.push(res);
